@@ -1,9 +1,9 @@
-#!/usr/bin/nodejs
+#!/usr/bin/env iojs
 
 
 (function() {
 
-	var _Proxy    = require('../lib/Proxy.js');
+	var _Proxy    = require('../source/Proxy.js');
 	var _settings = {
 
 		// required

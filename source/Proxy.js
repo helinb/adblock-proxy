@@ -16,14 +16,14 @@ if (typeof String.prototype.trim !== 'function') {
 (function(global) {
 
 	var _FILTERS   = {
-		'adblockplus': require('./filter/Adblockplus.js'),
-		'hosts':       require('./filter/Hosts.js')
+		'adblockplus': require(__dirname + '/filter/Adblockplus.js'),
+		'hosts':       require(__dirname + '/filter/Hosts.js')
 	};
 
 	var _PROTOCOLS = {
-		'http':   require('./protocol/HTTP.js'),
-		'https':  require('./protocol/HTTPS.js'),
-		'socks5': require('./protocol/SOCKS5.js')
+		'http':   require(__dirname + '/protocol/HTTP.js'),
+		'https':  require(__dirname + '/protocol/HTTPS.js'),
+		'socks5': require(__dirname + '/protocol/SOCKS5.js')
 	};
 
 
