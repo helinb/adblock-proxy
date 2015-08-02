@@ -320,8 +320,6 @@
 			var host = data.host;
 			var path = data.path;
 
-console.log('check', data);
-
 
 			var i, l, rule, chunk;
 
@@ -329,7 +327,7 @@ console.log('check', data);
 
 				rule = _cache.host[i];
 
-				if (host === rule) {
+				if (host.substr(host.length - rule.length) === rule) {
 					return true;
 				}
 
