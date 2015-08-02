@@ -46,6 +46,9 @@
 					key:  _KEY  || null
 				});
 
+server.on('upgrade', function(request, response) {
+	console.log('woot woot');
+});
 
 				server.on('request', function(request, response) {
 
@@ -58,6 +61,9 @@
 						path:     options.path,
 						href:     options.href
 					};
+
+
+console.log('SSL request', data);
 
 
 					var isblocked = callback.call(scope, data);

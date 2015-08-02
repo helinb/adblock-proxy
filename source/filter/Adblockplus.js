@@ -10,7 +10,7 @@
 	var _fs     = require('fs');
 	var _path   = require('path');
 
-	var _FOLDER = _path.resolve(__dirname, '../../adblockplus.d');
+	var _FOLDER = _path.resolve(__dirname, '../../config/adblockplus.d');
 
 
 	var _unique_push = function(data) {
@@ -167,6 +167,34 @@
 
 					if (line.indexOf('$') !== -1) {
 
+						if (line.indexOf('^$third-party') !== -1) {
+
+							tmp1 = line.substr(2, line.indexOf('^$third-party') - 2);
+
+							if (tmp1.indexOf('/') !== -1) {
+								tmp2 = tmp1.split('/').slice(1).join('/');
+								tmp1 = tmp1.split('/').shift();
+							} else {
+								tmp2 = '';
+							}
+
+
+							if (tmp2 === '') {
+
+								update = _unique_push.call(_cache.host, tmp1) || update;
+
+							} else {
+
+								update = _unique_push.call(_cache.complex, {
+									host: tmp1,
+									path: '/' + tmp2
+								}) || update;
+
+							}
+
+						}
+
+
 						// TODO: Support $popup, $script, $stylesheet and $domain
 
 					} else if (line.indexOf('*') !== -1) {
@@ -291,6 +319,8 @@
 
 			var host = data.host;
 			var path = data.path;
+
+console.log('check', data);
 
 
 			var i, l, rule, chunk;
