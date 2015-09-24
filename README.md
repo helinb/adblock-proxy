@@ -40,14 +40,12 @@ nodejs ./bin/proxy; # will start a proxy on defaulted settings (localhost:8080)
 
 If you want to use customized parameters, these are the supported parameters and their functionality:
 
-- --host=<ip> where *ip* is an IPv4 or IPv6 address (e.g. *192.168.0.1*)
-- --port=<port> where *port* is a valid port number (e.g. *8080*)
-- --public=true will allow using the proxy from other hosts (defaulted). Use --public=false to only allow connections using the given *ip*.
-- --protocol=http will spawn an HTTP based proxy. Supported protocols are *http*, *socks5*.
+- --public=true will allow using the proxy from other hosts (defaulted). Use --public=false to only allow connections using the local IP.
 
 ```bash
 # Example usage of customized parameters
-nodejs ./bin/proxy --host=192.168.0.1 --port=8080 --public=false --protocol=http
+cd /path/to/adblock-proxy;
+./bin/proxy --public=true; # default behaviour is public
 ```
 
 
@@ -67,7 +65,6 @@ It has fancy screenshots and stuff, you'll like it :)
 
 # Work-in-progress (aka still not working)
 
-- HTTPS Proxy (automatic SSL certificate issueing, maybe via sniffing (aka nulling bug))
-- SOCKS5 Proxy
+- HTTPS Proxy still needs proper testing, it is partly ignored by web browsers and I have no clue what's going on as it's undebuggable.
 - Support for ABP rules with $variable identifiers (requires HTML code parsing, which would slow down proxy)
 

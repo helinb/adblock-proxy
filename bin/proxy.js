@@ -5,9 +5,7 @@
 
 	var _Proxy    = require('../source/Proxy.js');
 	var _settings = {
-
 		'public': true
-
 	};
 
 

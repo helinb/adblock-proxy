@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+
+# Well, thanks, joyent. Thanks.
+iojs=`which iojs`;
+nodejs=`which nodejs`;
+node=`which node`;
+
+PROXY_ROOT=$(cd "$(dirname "$0")/../"; pwd);
+
+
+if [ "$iojs" != "" ]; then
+
+	cd $PROXY_ROOT;
+	$iojs $PROXY_ROOT/bin/proxy.js $1;
+
+elif [ "$nodejs" != "" ]; then
+
+	cd $PROXY_ROOT;
+	$nodejs $PROXY_ROOT/bin/proxy.js $1;
+
+elif [ "$node" != "" ]; then
+
+	cd $PROXY_ROOT;
+	$node $PROXY_ROOT/bin/proxy.js $1;
+
+else
+
+	echo "No iojs and no nodejs here. Please install iojs first.";
+
+fi;
+

@@ -57,11 +57,11 @@
 					if (isblocked === true) {
 
 						var header = {
-							'Content-Length': 31
+							'Content-Length': 24
 						};
 
 						response.writeHead(410, header);
-						response.write('Blocked by NodeJS AdBlock Proxy');
+						response.write('Blocked by AdBlock Proxy');
 						response.end();
 
 					} else {

@@ -57,6 +57,9 @@ if (typeof String.prototype.trim !== 'function') {
 		var settings = data instanceof Object ? data : {};
 
 
+		this.__public = settings['public'] === true;
+
+
 		settings = null;
 
 	};
@@ -70,8 +73,8 @@ if (typeof String.prototype.trim !== 'function') {
 
 		create: function() {
 
-			_PROTOCOLS['http'].create(null,   8008, _is_blocked, this);
-			// _PROTOCOLS['https'].create(null,  8118, _is_blocked, this);
+			_PROTOCOLS['http'].create(null,  8080, _is_blocked, this);
+//			_PROTOCOLS['https'].create(null, 8181, _is_blocked, this);
 
 		},
 
