@@ -1,0 +1,10 @@
+Package: adblock-proxy
+Version: __VERSION__
+Section: devel
+Priority: optional
+Architecture: __ARCH__
+Installed-Size: __SIZE__
+Depends: wget
+Maintainer: LazerUnicorns <rainbow@lazerunicorns.com>
+Description: AdBlock Proxy for blocking adverts on the interwebz
+

@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
 
 
+
+PROXY_ROOT=$(cd "$(dirname "$0")/../"; pwd);
+
+
+
 # Well, thanks, joyent. Thanks.
 iojs=`which iojs`;
 nodejs=`which nodejs`;
 node=`which node`;
 
-PROXY_ROOT=$(cd "$(dirname "$0")/../"; pwd);
+if [ -f "$PROXY_ROOT/bin/iojs" ]; then
+	iojs="$PROXY_ROOT/bin/iojs";
+fi;
+
 
 
 if [ "$iojs" != "" ]; then
